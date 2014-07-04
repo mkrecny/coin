@@ -2,7 +2,7 @@
   "name": "trade",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gui/bin/www",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +22,19 @@
     "socket.io-client": "^1.0.6",
     "time": "^0.11.0",
     "underscore": "^1.6.0",
-    "ws": "^0.4.31"
+    "ws": "^0.4.31",
+
+    "express": "~4.0.0",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+		"optimist":"*",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+		"redis":"*",
+		"datejs": "*",
+    "jade": "~1.3.0",
+    "connect-assets":"*",
+    "less":"*"
   }
 }

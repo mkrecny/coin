@@ -4,12 +4,12 @@ block content
   .container
     .row
       .col-xs-12
-        table.table
+        table.table.table-hover.table-striped
           thead
             tr
               th Markets (#{markets.length})
-              th Arbitrage Opportunities
-              th Exchanges
+              th  Opportunities
+              th Exchanges / Order Books
           tbody
             for market in markets
               include market

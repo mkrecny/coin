@@ -30,10 +30,9 @@ app.use(function(req,res,next){
 });
 
 app.get('/', lib('mw/load_depth'), lib('mw/load_markets'), lib('mw/to_view')('markets'));
-app.get('/arbs/:market', lib('mw/load_depth'), lib('mw/load_markets'), lib('mw/to_view')('arbs'));
+app.get('/arbs/:market', lib('mw/load_arbs'), lib('mw/to_view')('arbs'));
 app.get('/depth/:market', lib('mw/load_depth'), lib('mw/to_view')('market_depth'));
 
-/// error handlers
 
 // development error handler
 // will print stacktrace
@@ -57,4 +56,13 @@ app.use(function(err, req, res, next) {
     });
 });
 
-module.exports = app;
+//module.exports = app;
+
+//var debug = require('debug')('my-application');
+//var app = require('../app');
+
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+  console.log('Express server listening on port ' + server.address().port);
+});
