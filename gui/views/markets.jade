@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .container
+    .row
+      .col-xs-12
+        table.table
+          thead
+            tr
+              th Markets (#{markets.length})
+              th Arbitrage Opportunities
+              th Exchanges
+          tbody
+            for market in markets
+              include market

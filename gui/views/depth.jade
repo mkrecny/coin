@@ -1,0 +1,36 @@
+-var asks = depth[exchange].asks
+-var bids = depth[exchange].bids
+
+.row
+  .col-xs-12
+    a(id='#{exchange}')
+      h3 #{exchange}
+.row
+  .col-xs-6
+    .row
+      .col-xs-12
+        h4 Bids (#{bids.length})
+    .row
+      .col-xs-6
+        strong Quantity
+      .col-xs-6
+        strong Price
+    -bids.forEach(function(bid){
+      .row
+        .col-xs-6 #{bid[0]}
+        .col-xs-6 #{bid[1]}
+    -})
+  .col-xs-6
+    .row
+      .col-xs-12
+        h4 Asks (#{asks.length})
+    .row
+      .col-xs-6
+        strong Quantity
+      .col-xs-6
+        strong Price
+    -asks.forEach(function(ask){
+      .row
+        .col-xs-6 #{ask[0]}
+        .col-xs-6 #{ask[1]}
+    -})

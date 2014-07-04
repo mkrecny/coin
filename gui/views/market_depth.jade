@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .container
+    .row
+      .col-xs-12
+        h2 Market : #{market} Exchanges : #{Object.keys(depth).length}
+    .row
+      .col-xs-3
+        -for(exchange in depth){
+          include depth_nav_item
+        -}
+      .col-xs-9
+        -for(exchange in depth){
+          include depth
+        -}
