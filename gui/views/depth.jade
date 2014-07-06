@@ -4,33 +4,41 @@
 .row
   .col-xs-12
     a(id='#{exchange}')
-      h3 #{exchange}
+      h4 #{exchange}
 .row
   .col-xs-6
     .row
       .col-xs-12
-        h4 Bids (#{bids.length})
+        h5 Bids (#{bids.length})
     .row
-      .col-xs-6
-        strong Quantity
-      .col-xs-6
-        strong Price
-    -bids.forEach(function(bid){
-      .row
-        .col-xs-6 #{bid[0]}
-        .col-xs-6 #{bid[1]}
-    -})
+      .col-xs-12
+        table.table.table-striped.table-hover.table-bordered.sortable
+          thead
+            tr
+              th Quantity
+              th Price
+          tbody
+          -bids.forEach(function(bid){
+            tr
+              td #{bid[0]}
+              td #{bid[1]}
+          -});
+
   .col-xs-6
     .row
       .col-xs-12
-        h4 Asks (#{asks.length})
+        h5 Asks (#{asks.length})
     .row
-      .col-xs-6
-        strong Quantity
-      .col-xs-6
-        strong Price
-    -asks.forEach(function(ask){
-      .row
-        .col-xs-6 #{ask[0]}
-        .col-xs-6 #{ask[1]}
-    -})
+      .col-xs-12
+        table.table.table-striped.table-hover.table-bordered.sortable
+          thead
+            tr
+              th Quantity
+              th Price
+          tbody
+          -asks.forEach(function(ask){
+            tr
+              td #{ask[0]}
+              td #{ask[1]}
+          -});
+  

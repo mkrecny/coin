@@ -4,3 +4,5 @@
 //= require leaderboard.js
 //= require facebook.js
 //= require twitter.js
+//= require bootstrap-sortable.js
+//= require moment.min.js
