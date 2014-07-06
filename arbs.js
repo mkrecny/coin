@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var DAO = require('./lib/dao.js')
 , async = require('async')
 , calcArbs = require('./lib/calc_market_arbs.js')
