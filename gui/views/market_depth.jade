@@ -1,12 +1,11 @@
 extends layout
 
 block content
-  .container
+  .container.market-depth
     .row
-      .col-xs-12
-        h2 Market : #{market} Exchanges : #{Object.keys(depth).length}
+      .col-xs-12.title  #{market} Exchanges (#{Object.keys(depth).length})
     .row
-      .col-xs-3
+      .col-xs-3.side-nav
         -for(exchange in depth){
           include depth_nav_item
         -}
