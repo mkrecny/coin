@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+var start_ms = new Date().getTime()
 var DAO = require('./lib/dao.js')
 , async = require('async')
 , calcArbs = require('./lib/calc_market_arbs.js')
@@ -33,7 +33,9 @@ DAO.getMarketDepth(function(err, depth){
 	};
 
 	async.eachSeries(opts, iterator, function(){
+		var end_ms = new Date().getTime();
 		console.log('completed', opts.length, 'arb assessments');
+		console.log((end_ms-start_ms)/1000, 'seconds');
 		process.exit();
 	});
 
